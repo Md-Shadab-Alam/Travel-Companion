@@ -1,0 +1,119 @@
+<div class="list">
+    <div >
+        <h2>Restaurants, Hotel & Attractions around you </h2>
+    </div>
+    <span>Type</span>
+    <div class="box">
+        <mat-form-field>
+            <mat-label for="category">Select</mat-label>
+            <select matNativeControl required id="category" [(ngModel)]="selectedCategory">
+            <option value="restaurant">Restaurants</option>
+            <option value="hotel">Hotel</option>
+            <option value="attraction">Attraction</option>
+            </select>
+        </mat-form-field>
+        <!-- <mat-form-field>
+            <mat-label>Rating</mat-label>
+            <select matNativeControl required>
+            <option value="5 Stars">5 Stars</option>
+            <option value="4 Stars">4 Stars</option>
+            <option value="3 Stars">3 Stars</option>
+            </select>
+        </mat-form-field> -->
+    </div>   
+        <div *ngIf="selectedCategory === 'restaurant'">
+        <mat-card *ngFor="let restaurant of restaurants" class="list-card">
+           <div class="box">
+             <mat-card-header>
+                <div mat-card-avatar class="list-card-image"></div>
+                <mat-card-title>{{restaurant.name}}</mat-card-title>
+                
+            </mat-card-header>
+            <mat-card-content>
+                <div *ngIf="restaurant.rating !== undefined; else noRating">
+                    <p>Rating: {{ restaurant.rating }}</p>
+                </div>
+                <ng-template #noRating>
+                    <p>No Rating</p>
+                </ng-template>
+
+                <div *ngIf="restaurant.price !== undefined; else notProvided">
+                    <p>Price: {{ restaurant.price }}</p>
+                </div>
+                <ng-template #notProvided>
+                    <p>No Price</p>
+                </ng-template>
+            </mat-card-content>
+            <mat-card-action>
+                <button mat-button> Trip Advisor</button>
+                <button mat-button> Website</button>
+            </mat-card-action>
+        </div> 
+        <br><br>
+        </mat-card>
+        <br><br>
+    </div>
+
+    <div *ngIf="selectedCategory === 'hotel'">
+        <mat-card *ngFor="let hotel of hotels" class="list-card">
+            <mat-card-header>
+                <div mat-card-avatar class="list-card-image"></div>
+                <mat-card-title>{{hotel.name}}</mat-card-title>
+                
+            </mat-card-header>
+            <mat-card-content>
+                <div *ngIf="hotel.rating !== undefined; else noRating">
+                    <p>Rating: {{ hotel.rating }}</p>
+                </div>
+                <ng-template #noRating>
+                    <p>No Rating</p>
+                </ng-template>
+
+                <div *ngIf="hotel.price !== undefined; else notProvided">
+                    <p>Price: {{ hotel.price }}</p>
+                </div>
+                <ng-template #notProvided>
+                    <p>No Price</p>
+                </ng-template>
+            </mat-card-content>
+            <mat-card-action>
+                <button mat-button> Trip Advisor</button>
+                <button mat-button> Website</button>
+            </mat-card-action>
+        </mat-card>
+        <br><br>
+    </div>
+
+    <div *ngIf="selectedCategory === 'attraction'">
+        <mat-card *ngFor="let attraction of attractions" class="list-card">
+            <mat-card-header>
+                <div mat-card-avatar class="list-card-image"></div>
+                <mat-card-title>{{attraction.name}}</mat-card-title>
+                
+            </mat-card-header>
+            <mat-card-content>
+                <div *ngIf="attraction.rating !== undefined; else noRating">
+                    <p>Rating: {{ attraction.rating }}</p>
+                </div>
+                <ng-template #noRating>
+                    <p>No Rating</p>
+                </ng-template>
+
+                <div *ngIf="attraction.price !== undefined; else notProvided">
+                    <p>Price: {{ attraction.price }}</p>
+                </div>
+                <ng-template #notProvided>
+                    <p>No Price</p>
+                </ng-template>
+            </mat-card-content>
+            <mat-card-action>
+                <button mat-button> Trip Advisor</button>
+                <button mat-button> Website</button>
+            </mat-card-action>
+        </mat-card>
+        <br><br>
+    </div>
+
+
+</div>
+

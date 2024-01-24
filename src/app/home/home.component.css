@@ -1,0 +1,12 @@
+.fullScreen{
+}
+.map{
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+.list{
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}

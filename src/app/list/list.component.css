@@ -1,0 +1,25 @@
+.list{
+    background-color: rgb(217, 225, 231);
+    margin-top: -10px;
+    height: 100vh;
+}
+.box{
+    text-align: center;
+}
+.listtop{
+    background-color:azure;
+    padding-left: 15px;
+    height: 100vh;
+}
+
+.list-card{
+    width: 300px;
+    margin: 10px;
+    background-color:aliceblue;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 8px;
+}
+
+.list-card-image{
+    background-size: cover;
+}

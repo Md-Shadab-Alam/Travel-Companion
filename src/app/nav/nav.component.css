@@ -1,0 +1,11 @@
+.example-spacer{
+    flex: 1 1 auto;
+}
+.search{
+    align-items: center;
+    padding-left: 40px;
+    
+}
+.nav{
+    height: 40px;
+}
